@@ -9,7 +9,7 @@ public class cofrinho : MonoBehaviour
 	
 	
     //private double totalCofre = 0;
-	public string valor;
+	public double valor;
 	public GameObject inputField;
 	public GameObject textDisplay;
 	//Metodo carregar cena
@@ -19,64 +19,9 @@ public class cofrinho : MonoBehaviour
 	}
 
 	public void MudarValorTotal(){
-		valor = inputField.GetComponent<Text>().text;
-		textDisplay.GetComponent<Text>().text = "R$"+valor;
+		valor += double.Parse(inputField.GetComponent<Text>().text);
+		textDisplay.GetComponent<Text>().text = "R$"+valor.ToString();
 	}
-	/*
-	public void Add10Centavos(){
-		
-			totalCofre = totalCofre + 0.10;
-			GameObject.Find("txtTotalCofre").GetComponentInChildren<Text>().text = "R$"+totalCofre.ToString();
-		
-	}
-	public void Add25Centavos(){
-		
-			totalCofre = totalCofre + 0.25;
-			GameObject.Find("txtTotalCofre").GetComponentInChildren<Text>().text = "R$"+totalCofre.ToString();
-		
-	}
-	public void Add50Centavos(){
-		
-			totalCofre = totalCofre + 0.50;
-			GameObject.Find("txtTotalCofre").GetComponentInChildren<Text>().text = "R$"+totalCofre.ToString();
-		
-	}
-	public void Add75Centavos(){
-		
-			totalCofre = totalCofre + 0.75;
-			GameObject.Find("txtTotalCofre").GetComponentInChildren<Text>().text = "R$"+totalCofre.ToString();
-		
-	}
-	public void Add1Real(){
-		
-			totalCofre = totalCofre + 1;
-			GameObject.Find("txtTotalCofre").GetComponentInChildren<Text>().text = "R$"+totalCofre.ToString();
-		
-	}
-	public void Add5Reais(){
-		
-			totalCofre = totalCofre + 5;
-			GameObject.Find("txtTotalCofre").GetComponentInChildren<Text>().text = "R$"+totalCofre.ToString();
-		
-	}
-	public void Add10Reais(){
-		
-			totalCofre = totalCofre + 10;
-			GameObject.Find("txtTotalCofre").GetComponentInChildren<Text>().text = "R$"+totalCofre.ToString();
-		
-	}
-	public void Add50Reais(){
-		
-			totalCofre = totalCofre + 50;
-			GameObject.Find("txtTotalCofre").GetComponentInChildren<Text>().text = "R$"+totalCofre.ToString();
-		
-	}
-	public void Add100Reais(){
-		
-			totalCofre = totalCofre + 100;
-			GameObject.Find("txtTotalCofre").GetComponentInChildren<Text>().text = "R$"+totalCofre.ToString();
-		
-	}
-	*/
+	
 
 }
