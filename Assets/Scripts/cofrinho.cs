@@ -8,14 +8,21 @@ public class cofrinho : MonoBehaviour
 {
 	
 	
-    private double totalCofre = 0;
-	
+    //private double totalCofre = 0;
+	public string valor;
+	public GameObject inputField;
+	public GameObject textDisplay;
 	//Metodo carregar cena
 	public void LoadModulo01(string name){
 		SceneManager.LoadScene(name);
 	
 	}
 
+	public void MudarValorTotal(){
+		valor = inputField.GetComponent<Text>().text;
+		textDisplay.GetComponent<Text>().text = "R$"+valor;
+	}
+	/*
 	public void Add10Centavos(){
 		
 			totalCofre = totalCofre + 0.10;
@@ -70,6 +77,6 @@ public class cofrinho : MonoBehaviour
 			GameObject.Find("txtTotalCofre").GetComponentInChildren<Text>().text = "R$"+totalCofre.ToString();
 		
 	}
-	
+	*/
 
 }
