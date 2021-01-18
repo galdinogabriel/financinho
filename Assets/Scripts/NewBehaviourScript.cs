@@ -1,36 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class NewBehaviourScript : MonoBehaviour
 {
 
-    public GameObject InputField;
-    private int numDialog = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        if(numDialog == 0){
-            InputField.SetActive(false);
-        numDialog = 1;
-        }
-        
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    //Metodo para alterar conteudo do objeto Text
-	public void AtivarTextBox(){
-		//Verificando a variavel numDialog e alterando o texto de dialogo conforme a ordem certa.
-		if(numDialog == 1){
-			InputField.SetActive(true);
+    public Text dialogo;
+	private int numDialog = 0;
+	public GameObject respostaM01P0101;
+	public GameObject respostaM01P0102;
+	public GameObject respostaM01P0103;
+	public GameObject respostaM01P0201;
+	public GameObject respostaM01P0202;
+	public GameObject respostaM01P0203;
+    public GameObject bttAvançar;
+	//Metodo carregar cena
+    public void LoadPergunta01(string name){
+		if(numDialog == 15){
 			
+			//Carregar cena de acordo com seu nome
+			SceneManager.LoadScene(name);
 		}
-    }
-    
+		
+	
+	}
+	public void LoadModulo01(string name){
+		SceneManager.LoadScene(name);
+		
+	
+	}
+
+	//Metodo para alterar conteudo do objeto Text
+	public void MudarTexto(){
+		
+
+	}
 }

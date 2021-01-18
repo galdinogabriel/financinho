@@ -17,7 +17,7 @@ public class bttFases : MonoBehaviour
 	//Metodo carregar cena
 	
 	public void LoadPergunta01(string name){
-		if(numDialog == 15){
+		if(numDialog == 16){
 			
 			//Carregar cena de acordo com seu nome
 			SceneManager.LoadScene(name);
@@ -145,8 +145,17 @@ public class bttFases : MonoBehaviour
 			numDialog = 14;
 		}else
 		if(numDialog == 14){
-			
+			GameObject.Find("txtQuadro").GetComponentInChildren<Text>().text = "";
+			GameObject.Find("txtDialog").GetComponentInChildren<Text>().text = "Que tal se agora você responder algumas perguntas?";
+
 			numDialog = 15;
+			LoadPergunta01(name);
+		}
+		else
+		if(numDialog == 15){
+			
+
+			numDialog = 16;
 			LoadPergunta01(name);
 		}
 		
